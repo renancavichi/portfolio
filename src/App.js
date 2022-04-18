@@ -1,9 +1,11 @@
-import './App.css';
+import AddImage from './estudo/addimage';
+import UsandoProps from './estudo/UsandoProps'
 
 function App() {
   return (
     <div className="App">
-      <h1>Renan Cavichi' Portfolio and Blog</h1>
+      <UsandoProps />
+      <AddImage nome="Renan"/>
     </div>
   );
 }
