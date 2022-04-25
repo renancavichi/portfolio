@@ -3,6 +3,8 @@ import ExemploContexto from './estudo/ExemploContexto';
 import UsandoProps from './estudo/UsandoProps'
 import LangContext from './estudo/LangContext'
 import { useState } from 'react'
+import UsandoChildren from './estudo/UsandoChildren';
+import UsandoIcons from './estudo/UsandoIcons';
 
 function App() {
 
@@ -40,6 +42,14 @@ function App() {
         <UsandoProps />
         <AddImage nome="Renan"/>
         <ExemploContexto/>
+        <UsandoChildren value={10}>
+          <h1>Usei o Children</h1>
+        </UsandoChildren>
+        <UsandoChildren value={5} >
+          <h2>Usei o Children 2</h2>
+          <p>Bla bla bla</p>
+          <UsandoIcons />
+        </UsandoChildren>
       </div>
     </LangContext.Provider>
   );
