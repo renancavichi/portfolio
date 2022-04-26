@@ -5,6 +5,7 @@ import LangContext from './estudo/LangContext'
 import { useState } from 'react'
 import UsandoChildren from './estudo/UsandoChildren';
 import UsandoIcons from './estudo/UsandoIcons';
+import APIIntegration from './estudo/APIIntegration';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
           <p>Bla bla bla</p>
           <UsandoIcons />
         </UsandoChildren>
+        <APIIntegration />
       </div>
     </LangContext.Provider>
   );
