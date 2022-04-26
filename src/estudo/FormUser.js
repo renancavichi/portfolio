@@ -15,7 +15,7 @@ const FormUser = ({users, setUsers}) => {
       .then((response) => response.json())
       .then((data) => {
         alert(data.message)
-        setUsers([...users, data.user])
+        setUsers([data.user, ...users])
       });
   } 
 
