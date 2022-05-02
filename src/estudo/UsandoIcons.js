@@ -5,12 +5,12 @@ const UsandoIcons = ({valor, children}) => {
     return (
         <>
             <FaApple style={{
-                color: "#FFFFFF",
+                color: "#000",
                 width: '100px',
                 height: '100px'
             }}/>
             <HiOutlineTrash style={{
-                color: "#FFFFFF",
+                color: "#000",
                 width: '100px',
                 height: '100px'
             }}/>
