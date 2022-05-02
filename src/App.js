@@ -9,6 +9,7 @@ import APIIntegration from './estudo/APIIntegration';
 import { Routes, Route } from "react-router-dom";
 import Menu from './estudo/Menu';
 import NotFound from './pages/NotFound'
+import EditUser from './estudo/EditUser'
 
 function App() {
 
@@ -46,15 +47,20 @@ function App() {
         <Menu />
         <Routes>
           <Route path="/" element={<ExemploContexto/>} />
-          <Route path="images" element={<AddImage nome="Renan"/>} />
-          <Route path="api-integration" element={<APIIntegration />} />
+          <Route path="images">
+            <Route index element={<AddImage />} />
+            <Route path="icon" element={<UsandoIcons />} />
+          </Route>
+          <Route path="api-integration" >
+            <Route index element={<APIIntegration />}/>
+            <Route path="edit/:userId" element={<EditUser />} />
+          </Route>
           <Route path="props" element={<UsandoProps />} />
           <Route path="children" element={ 
             <UsandoChildren value={10}>
               <h1>Usei o Children</h1>
             </UsandoChildren>
           } />
-          <Route path="images/icon" element={<UsandoIcons />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

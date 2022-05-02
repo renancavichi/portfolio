@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import FormUser from "./FormUser";
 import {BsTrash as IconTrash} from "react-icons/bs"
+import {TiEdit as IconEdit} from 'react-icons/ti'
+import { useNavigate } from 'react-router-dom'
 
 const APIIntegration = () => {
 const [users, setUsers] = useState(null);
+const navigate = useNavigate();
 
 useEffect(() => {
     fetch("http://localhost/lp2/api/user/select-all")
@@ -36,7 +39,14 @@ return (
           <div key={user.id}>
             <h1>{user.name}</h1>
             <p>{user.email}</p>
-            <IconTrash onClick={() => handleTrashClick(user.id)}/>
+            <IconTrash 
+              onClick={() => handleTrashClick(user.id)}
+              style={{cursor: 'pointer'}}
+            />
+            <IconEdit 
+              onClick={() => navigate('edit/'+user.id)} 
+              style={{cursor: 'pointer'}}
+            />
           </div>
         )
       })
