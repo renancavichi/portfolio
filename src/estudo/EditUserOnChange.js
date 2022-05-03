@@ -3,15 +3,29 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 const EditUserOnChange = () => {
 
-    const { userId } = useParams();
-    const [user, setUser] = useState();
-    const navigate = useNavigate();
+    const { userId } = useParams()
+    const [user, setUser] = useState()
+    const navigate = useNavigate()
+
+    // const clearUserValue = {
+    //     name: '',
+    //     email: '',
+    //     pass: ''
+    // }
 
     useEffect(() => {
-        fetch("http://localhost/lp2/api/user/select-by-id/?id="+userId)
-            .then((response) => response.json())
-            .then((data) => setUser(data));
-    }, []);
+        fetch(`http://localhost/lp2/api/user/select-by-id/?id=${userId}`)
+            .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                }
+                throw new Error(response.statusText);
+            })
+            .then((data) => setUser(data))
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [userId]);
   
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -28,6 +42,7 @@ const EditUserOnChange = () => {
             .then((data) => {
                 if(data?.user?.id){
                     navigate('../');
+                    //setUser(clearUserValue)
                 } else if(data?.message){
                     alert(data.message)
                 } else {

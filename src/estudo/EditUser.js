@@ -11,7 +11,7 @@ const EditUser = () => {
         fetch("http://localhost/lp2/api/user/select-by-id/?id="+userId)
             .then((response) => response.json())
             .then((data) => setUser(data));
-    }, []);
+    }, [userId]);
   
     const handleSubmit = (event) => {
         event.preventDefault()
