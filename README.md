@@ -1,4 +1,4 @@
-# Renan Cavichi's Portfolio and Blog
+# Tutorial React
 
 Hi! I'm Renan Cavichi,
 MSc Software Engineer, especialized on Web Development, Usability and Agile Methods
