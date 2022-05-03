@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const EditUser = () => {
+const EditUserOnChange = () => {
 
     const { userId } = useParams();
     const [user, setUser] = useState();
@@ -34,15 +34,20 @@ const EditUser = () => {
                     console.log(data)
                 }
             })
+    }
+    
+    const handleChange = (event) => {
+        const {name, value} = event.target
+        setUser({...user, [name]: value})
     } 
   
     return (
         <>
         {user ? (
             <form onSubmit={(event) => handleSubmit(event)}>
-                <label>Nome:</label><input type="text" name="name" defaultValue={user.name} />
-                <label>Email:</label><input type="email" name="email"  defaultValue={user.email} />
-                <label>Senha:</label><input type="password" name="pass"  defaultValue={user.pass} />
+                <label>Nome:</label><input type="text" name="name" value={user.name} onChange={handleChange} />
+                <label>Email:</label><input type="email" name="email"  value={user.email} onChange={handleChange} />
+                <label>Senha:</label><input type="password" name="pass"  value={user.pass} onChange={handleChange} />
                 <input type="submit" value="Editar" />
             </form>
             )
@@ -53,4 +58,4 @@ const EditUser = () => {
     )
 }
 
-export default EditUser
+export default EditUserOnChange
