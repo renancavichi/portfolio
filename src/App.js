@@ -7,9 +7,10 @@ import UsandoChildren from './estudo/UsandoChildren';
 import UsandoIcons from './estudo/UsandoIcons';
 import APIIntegration from './estudo/APIIntegration';
 import { Routes, Route } from "react-router-dom";
-import Menu from './estudo/Menu';
 import NotFound from './pages/NotFound'
 import EditUserOnChange from './estudo/EditUserOnChange'
+import LayoutDefault from './pages/LayoutDefault';
+import LayoutDashboard from './pages/LayoutDashboard';
 
 function App() {
 
@@ -44,23 +45,22 @@ function App() {
         setCurrentLanguage
       ]}>
       <div className="App">
-        <Menu />
         <Routes>
-          <Route path="/" element={<ExemploContexto/>} />
-          <Route path="images">
-            <Route index element={<AddImage />} />
-            <Route path="icon" element={<UsandoIcons />} />
+          <Route path="/" element={<LayoutDefault />}>
+            <Route index element={<ExemploContexto/>} />
+            <Route path="props" element={<UsandoProps />} />
+            <Route path="children" element={<UsandoChildren />} />
+            <Route path="images">
+              <Route index element={<AddImage />} />
+              <Route path="icon" element={<UsandoIcons />} />
+            </Route>
           </Route>
-          <Route path="api-integration" >
-            <Route index element={<APIIntegration />}/>
-            <Route path="edit/:userId" element={<EditUserOnChange />} />
+
+          <Route path='admin' element={<LayoutDashboard />} >
+              <Route index element={<APIIntegration />}/>
+              <Route path="edit/:userId" element={<EditUserOnChange />} />
           </Route>
-          <Route path="props" element={<UsandoProps />} />
-          <Route path="children" element={ 
-            <UsandoChildren value={10}>
-              <h1>Usei o Children</h1>
-            </UsandoChildren>
-          } />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

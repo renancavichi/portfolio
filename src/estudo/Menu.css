@@ -1,6 +1,9 @@
+.menu{
+    background: #000;
+}
 .menu a{
     text-decoration: none;
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 .menu .active{
     color: #dd5c01 
