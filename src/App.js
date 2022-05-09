@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AddImage from './estudo/addimage';
 import ExemploContexto from './estudo/ExemploContexto';
 import UsandoProps from './estudo/UsandoProps'
