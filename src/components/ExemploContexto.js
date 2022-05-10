@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import FilhoContexto from "./FilhoContexto";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import headConfig from '../helpers/headConfig';
 
 const ExemploContexto = () => { 
+  useEffect(() => {
+    headConfig({
+      title: 'Home - Exemplo Contexto',
+      description: 'Novo description exemplo contexto',
+      keywords: 'Context, Hook, useContext',
+      canonical: 'https://renancavichi.com/'
+    });
+  }, [])    
+  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

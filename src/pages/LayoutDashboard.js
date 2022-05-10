@@ -1,4 +1,4 @@
-import Footer from '../estudo/Footer'
+import Footer from '../components/Footer'
 import { Outlet } from "react-router-dom";
 
 const LayoutDashboard = () => {

@@ -1,5 +1,5 @@
 // EXEMPLO USO SIMPLES DE IMAGENS COM REACT
-import "./addimage.css"
+import "./AddImage.css"
 // importar imagens jpg, png , gif, svg, jpeg, webp
 import mountain from "../assets/img/mountain.webp"
 import logo from "../assets/img/react-logo.svg"

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import LangContext from './LangContext'
+import { LangContext } from "../lang/LangProvider"
 
 const FilhoContexto = () => {
     const [lang, toggleLanguage, setCurrentLanguage] = useContext(LangContext);
