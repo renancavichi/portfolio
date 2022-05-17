@@ -8,3 +8,8 @@
 .menu .active{
     color: #dd5c01 
 }
+
+.menu span{
+    color: #ffffff;
+    margin: 0 0 0 20px; 
+}

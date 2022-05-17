@@ -11,30 +11,35 @@ import NotFound from './pages/NotFound'
 import EditUserOnChange from './components/EditUserOnChange'
 import LayoutDefault from './pages/LayoutDefault';
 import LayoutDashboard from './pages/LayoutDashboard';
+import AuthProvider from './providers/authProvider'
+import Login from './components/Login';
 
 function App() {
   return (
       <div className="App">
-        <LangProvider>
-          <Routes>
-            <Route path="/" element={<LayoutDefault />}>
-              <Route index element={<ExemploContexto/>} />
-              <Route path="props" element={<UsandoProps />} />
-              <Route path="children" element={<UsandoChildren />} />
-              <Route path="images">
-                <Route index element={<AddImage />} />
-                <Route path="icon" element={<UsandoIcons />} />
+       <AuthProvider>
+          <LangProvider>
+            <Routes>
+              <Route path="/" element={<LayoutDefault />}>
+                <Route index element={<ExemploContexto/>} />
+                <Route path="props" element={<UsandoProps />} />
+                <Route path="children" element={<UsandoChildren />} />
+                <Route path="images">
+                  <Route index element={<AddImage />} />
+                  <Route path="icon" element={<UsandoIcons />} />
+                </Route>
               </Route>
-            </Route>
 
-            <Route path='admin' element={<LayoutDashboard />} >
-                <Route index element={<APIIntegration />}/>
-                <Route path="edit/:userId" element={<EditUserOnChange />} />
-            </Route>
+              <Route path='admin/login' element={<Login />} />
+              <Route path='admin/' element={<LayoutDashboard />}>
+                    <Route index element={<APIIntegration />}/>
+                    <Route path="edit/:userId" element={<EditUserOnChange />} />
+              </Route>
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </LangProvider>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </LangProvider>
+        </AuthProvider>
       </div>
   );
 }
