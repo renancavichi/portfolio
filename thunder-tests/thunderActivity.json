@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "6ff44e57-5a40-43a5-89a4-f43daddef4af",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/user/login",
+    "url": "http://localhost/lp2/api/user/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-05-23T17:35:03.591Z",
+    "modified": "2022-05-23T17:35:03.891Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "email",
+          "value": "renancavichi@gmail.com"
+        },
+        {
+          "name": "pass",
+          "value": "321321"
+        }
+      ]
+    },
+    "tests": []
+  }
+]

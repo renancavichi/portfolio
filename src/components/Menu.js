@@ -5,7 +5,13 @@ import { useAuth } from '../providers/authProvider'
 
 const Menu = () => {
 
-  const {isLogged, userLogged} = useAuth();
+  const {isLogged, userLogged, setIsLogged, setUserLogged} = useAuth();
+
+  const logout = () => {
+    setIsLogged(false)
+    setUserLogged({})
+    localStorage.removeItem('userLogged')
+  }
 
   return (
     <div className='menu'>
@@ -15,9 +21,15 @@ const Menu = () => {
         <NavLink style={{margin: '0 0 0 10px'}} to="children">Children</NavLink> 
         <NavLink style={{margin: '0 0 0 10px'}} to="images/icon">Icon</NavLink>  
         { isLogged 
-          ? (<span>Logado como: {userLogged.email}</span>)
+          ? (
+              <>
+                <span>Logado como: {userLogged.email}</span> 
+                <button onClick={logout}>Sair</button>
+              </>
+          )
           : (<span><Link to="admin/login">Login Admin</Link></span>)
         }
+        
     </div>
 
   )

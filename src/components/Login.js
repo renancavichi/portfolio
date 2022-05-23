@@ -1,10 +1,16 @@
-import { useRef } from "react";
-
+import { useRef, useEffect } from "react";
+import { useAuth } from "../providers/authProvider";
 
 const Login = () => {
 
     const emailRef = useRef();
     const passRef = useRef();
+
+    const { setIsLogged, setUserLogged, isLogged, userLogged } = useAuth();
+
+    useEffect(() => {
+        emailRef.current.focus()
+    },[])
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -18,14 +24,13 @@ const Login = () => {
           .then(async (response) => {
                 if(response.status === 200){
                     let data = await response.json()
-                    emailRef.current.value = ''
-                    passRef.current.value = ''
-                    emailRef.current.focus()
-                    console.log(data)
+                    setIsLogged(true)
+                    setUserLogged(data.session)
+                    localStorage.setItem('userLogged', JSON.stringify(data.session));
                 } else {
                     let data = await response.json()
                     data?.message
-                        ? alert(data?.message)
+                        ? alert(data.message)
                         : alert('Erro ao Logar!')
                 }
             })
@@ -39,6 +44,16 @@ const Login = () => {
             <label>Senha:</label><input ref={passRef} type="password" name="pass"/>
             <input type="submit" value="Logar" />
             </form>
+            <h1>User Logged</h1>
+            { isLogged
+                ? (<span>isLogged True</span>)
+                : (<span>isLogged False</span>)
+            }
+            <br />
+            <p>
+                {JSON.stringify(userLogged)}
+            </p>
+            
         </>
     )
 }

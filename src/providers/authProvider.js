@@ -1,15 +1,20 @@
-import { useState, createContext } from 'react';
-import { useContext } from "react";
+import { useState, createContext, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
+
 	const [isLogged, setIsLogged] = useState(false);
-	const [userLogged, setUserLogged] = useState({
-        email: 'renancavichi@gmail.com',
-        roles: 'admin',
-        token: '233j12398u132n12389u123j1'
-    });
+	const [userLogged, setUserLogged] = useState({});
+
+	useEffect(() => {
+		const userdata = localStorage.getItem('userLogged')
+		let user = JSON.parse(userdata)
+		if(user){
+			setUserLogged(user)
+			setIsLogged(true)
+		}
+	},[])
 	
 	return (
 		<AuthContext.Provider value={[
@@ -24,7 +29,7 @@ const AuthProvider = ({children}) => {
 }
 
 export const useAuth = () => {
-   const [ isLogged, setIsLogged, userLogged, setUserLogged] = useContext(AuthContext)
+   const [isLogged, setIsLogged, userLogged, setUserLogged] = useContext(AuthContext)
    return {isLogged, setIsLogged, userLogged, setUserLogged}
 }
 
