@@ -13,6 +13,7 @@ import LayoutDefault from './pages/LayoutDefault';
 import LayoutDashboard from './pages/LayoutDashboard';
 import AuthProvider from './providers/authProvider'
 import Login from './components/Login';
+import CadastraProduto from './components/CadastraProduto';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path='admin/' element={<LayoutDashboard />}>
                     <Route index element={<APIIntegration />}/>
                     <Route path="edit/:userId" element={<EditUserOnChange />} />
+                    <Route path="cadastra-produto/" element={<CadastraProduto />} />
               </Route>
 
               <Route path="*" element={<NotFound />} />
