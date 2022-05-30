@@ -1,10 +1,12 @@
 import { useRef, useEffect} from 'react'
+import { useAuth } from '../providers/authProvider';
 
 const CadastraProduto = ({users, setUsers}) => {
 
   const titleRef = useRef();
   const photoRef = useRef();
   const priceRef = useRef();
+  const { userLogged } = useAuth();
 
   useEffect(() => {
     titleRef.current.focus()
@@ -21,7 +23,7 @@ const CadastraProduto = ({users, setUsers}) => {
         method: 'POST',
         body: formData,
         headers: {
-          "Access-Token": "fe163d9581dd08821b8b7fc9c0d04dda"
+          "Access-Token": userLogged.token
         }
       })
       .then((response) => response.json())
