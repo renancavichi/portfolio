@@ -1,12 +1,12 @@
-# Tutorial React
+# React Tutorial
 
 Hi! I'm Renan Cavichi,<br>
 MSc Software Engineer, especialized on Web Development, Usability and Agile Methods<br><br>
 
 This is a academic tutorial for beginers in React.
-Here, you will found some codes developed during my classes.
+Here, you will found some codes developed during my classes in brazilian.
 
-Fell free to explore the code and leanr together.
+Fell free to explore the code and learn react.
 
 #### Hooks
 

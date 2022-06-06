@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import CardUser from "./CardUser.js";
 import './UsandoProps.css'
 import headConfig from "../helpers/headConfig.js";
-import { useAllowedRole } from '../providers/authProvider.js';
+import { useAllowedRole } from '../providers/AuthProvider.js';
 
 const UsandoProps = () => {
 

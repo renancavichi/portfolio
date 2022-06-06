@@ -1,6 +1,6 @@
 import Footer from '../components/Footer'
 import { Outlet } from "react-router-dom";
-import { useAllowedRole } from '../providers/authProvider';
+import { useAllowedRole } from '../providers/AuthProvider';
 
 const LayoutDashboard = () => {
 

@@ -1,5 +1,5 @@
 import { useRef, useEffect} from 'react'
-import { useAuth } from '../providers/authProvider';
+import { useAuth } from '../providers/AuthProvider';
 
 const CadastraProduto = ({users, setUsers}) => {
 

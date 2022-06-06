@@ -1,6 +1,6 @@
 import { useState, createContext } from 'react';
-import br from './br'
-import en from './en'
+import br from '../lang/br'
+import en from '../lang/en'
 
 export const LangContext = createContext();
 
