@@ -9,6 +9,7 @@ import { ReactComponent as Logo } from "../assets/img/react-logo.svg"
 const AddImage = () => {
   return (
     <div className="bgimagens">
+        <br/><br/><p>Sample: Add image, svg and css background image.</p>
         {/* Usando imagens svg como componentes */} 
         <Logo alt="Logo React" width="400" height="400" />
         {/* Usando imagens importadas com a tag img*/} 

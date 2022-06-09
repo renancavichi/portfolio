@@ -6,10 +6,11 @@ const FilhoContexto = () => {
     
     return (
         <>
-        <h1>{lang.welcome}</h1>
-        <button onClick={() => toggleLanguage()}>{lang.changeLanguage}</button>
-        <button onClick={() => setCurrentLanguage('br')}>{lang.portuguese}</button>
-        <button onClick={() => setCurrentLanguage('en')}>{lang.english}</button>
+          <br/><br/><p>Sample useContext to change Language:</p>
+          <h1>{lang.welcome}</h1>
+          <button onClick={() => toggleLanguage()}>{lang.changeLanguage}</button>
+          <button onClick={() => setCurrentLanguage('br')}>{lang.portuguese}</button>
+          <button onClick={() => setCurrentLanguage('en')}>{lang.english}</button>
         </>
         
 

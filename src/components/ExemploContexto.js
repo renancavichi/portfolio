@@ -20,6 +20,7 @@ const ExemploContexto = () => {
   const handleShow = () => setShow(true);
     return (
       <>
+        <br/><p>Sample bootstrap Modal:</p>
         <Button variant="success" onClick={handleShow}>Open Modal</Button>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>

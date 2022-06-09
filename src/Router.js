@@ -18,7 +18,11 @@ const Router = () => {
         <Route path="/" element={<LayoutDefault />}>
         <Route index element={<Home />} />
         <Route path="props" element={<UsandoProps />} />
-        <Route path="children" element={<UsandoChildren />} />
+        <Route path="children" element={
+          <UsandoChildren value={10}>
+            <p>Sample: Using Children.</p>
+          </UsandoChildren>
+        } />
         <Route path="images">
             <Route index element={<AddImage />} />
             <Route path="icon" element={<UsandoIcons />} />
