@@ -10,8 +10,8 @@ const AuthProvider = ({children}) => {
 	const [userLoaded, setUserLoaded] = useState(false);
 
 	useEffect(() => {
-		const userdata = localStorage.getItem('userLogged')
-		let user = JSON.parse(userdata)
+		const userData = localStorage.getItem('userLogged')
+		let user = JSON.parse(userData)
 		if(user){
 			setUserLogged(user)
 			setIsLogged(true)
