@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthProvider from './providers/AuthProvider'
 import LangProvider from './providers/LangProvider'
+import ThemeProvider from './providers/ThemeProvider';
 import Router from './Router';
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
       <div className="App">
         <AuthProvider>
           <LangProvider>
-            <Router />
+            <ThemeProvider>
+              <Router />
+            </ThemeProvider>
           </LangProvider>
         </AuthProvider>
       </div>

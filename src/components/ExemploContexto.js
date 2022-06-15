@@ -3,8 +3,13 @@ import FilhoContexto from "./FilhoContexto";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import headConfig from '../helpers/headConfig';
+import useTheme from '../hook/useTheme';
 
 const ExemploContexto = () => { 
+  
+  const mode = useTheme()
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     headConfig({
       title: 'Home - Exemplo Contexto',
@@ -12,12 +17,11 @@ const ExemploContexto = () => {
       keywords: 'Context, Hook, useContext',
       canonical: 'https://renancavichi.com/'
     });
-  }, [])    
-  
-  const [show, setShow] = useState(false);
+  }, []) 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
     return (
       <>
         <br/><p>Sample bootstrap Modal:</p>
@@ -38,6 +42,7 @@ const ExemploContexto = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+        <h3>Theme: {mode}</h3>
         <FilhoContexto />
       </>
     );
